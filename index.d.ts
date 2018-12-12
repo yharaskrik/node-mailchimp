@@ -4,7 +4,14 @@
 export = Mailchimp;
 
 declare class Mailchimp {
-  constructor(api: string)
+    /**
+     *
+     * @param api
+     * @param type defaulted to 'api_key' in index.js file as to not break prior node-mailchimp implementations
+     * @param dc The region or 'dc' of the api. This will be set using the same method for api_keys as before but is
+     * required for any OAuth implementations
+     */
+  constructor(api: string, type?: string, dc?: string)
 
   get(
     pathOrOptions: PathOrOptions,
